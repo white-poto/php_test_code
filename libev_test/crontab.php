@@ -6,8 +6,8 @@
  * Time: 14:34
  */
 
-$timer = new EvPeriodic(0., 0.1, null, function($w, $revents){
-    echo time(), PHP_EOL;
+$timer = new EvPeriodic(0., 0.0001, null, function($w, $revents){
+    echo microtime(), PHP_EOL;
 });
 
 Ev::run();

@@ -6,7 +6,7 @@
  * Time: 14:34
  */
 
-$timer = new EvPeriodic(0., 0., null, function($w, $revents){
+$timer = new EvPeriodic(0., 0.1, null, function($w, $revents){
     echo time(), PHP_EOL;
 });
 

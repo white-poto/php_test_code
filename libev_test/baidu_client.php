@@ -15,7 +15,8 @@ socket_connect($socket, "www.baidu.com", 80);
 $in = "GET / HTTP/1.1" . PHP_EOL . PHP_EOL;
 
 socket_write($socket, $in, strlen($in));
-$read = new EvIo($socket, Ev::READ, function ($read, $data){
+$read = new EvIo($socket, Ev::READ, function ($read, $data) use($socket){
+    echo socket_read($socket, 1024);
     var_dump($read);
     $obj = new ReflectionObject($read);
     $methods = $obj->getMethods();

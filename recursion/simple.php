@@ -20,18 +20,21 @@ function recursion($data){
 
 
 function noRecursion($data){
+    $result = null;
     $stack = new SplStack();
     $stack->push($data);
     do{
         if(!$stack->valid()) break;
 
-        $cur_data = $stack->pop();
-        if($cur_data > 10){
-            return $cur_data;
+        $result = $stack->pop();
+        if($result > 10){
+            return $result;
         }
 
-        $stack->push($cur_data + 1);
+        $stack->push($result + 1);
     }while(true);
+
+    return $result;
 }
 
 

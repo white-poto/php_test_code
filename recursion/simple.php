@@ -20,16 +20,17 @@ function recursion($data){
 
 
 function noRecursion($data){
-    $stack = array($data);
+    $stack = new SplStack();
+    $stack->push($data);
     do{
-        if(empty($stack)) break;
+        if(!$stack->valid()) break;
 
-        $cur_data = array_pop($stack);
+        $cur_data = $stack->pop();
         if($cur_data > 10){
             return $cur_data;
         }
 
-        array_push($stack, $cur_data + 1);
+        $stack->push($cur_data + 1);
     }while(true);
 }
 

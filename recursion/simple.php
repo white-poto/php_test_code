@@ -24,7 +24,7 @@ function noRecursion($data){
     do{
         if(empty($stack)) break;
 
-        $cur_data = array_pop($data);
+        $cur_data = array_pop($stack);
         if($cur_data > 10){
             return $cur_data;
         }

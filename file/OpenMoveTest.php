@@ -37,6 +37,7 @@ class OpenMoveTest extends PHPUnit_Framework_TestCase
         }
 
         $write = fwrite($fp, 'test');
+        var_dump($write);
         if($write == 0){
             throw new RuntimeException('write failed');
         }
